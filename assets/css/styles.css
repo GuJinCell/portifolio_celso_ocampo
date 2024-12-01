@@ -1,11 +1,15 @@
-:root{
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400&display=swap');
+
+:root, :root[data-theme="dark"]{
     --primary-color: #f0f0f0;
 
     --primary-bg-color:#111217;
 
     --secondary-bg-color:#28292E;
 
-    --border-color:#28292E;
+    --primary-border-color:#28292E;
+
+    --secundary-border-color:#56575A;
 
     --title-color:#f0f0f0;
 
@@ -16,19 +20,68 @@
     --icon-color:#C7C8C9;
 }
 
+:root[data-theme="light"]{
+    --primary-color: #0b0b0f;
+
+    --primary-bg-color:#E9E9E9;
+
+    --secondary-bg-color:#C7C8C9;
+
+    --primary-border-color:#C7C8C9;
+
+    --secundary-border-color:#56575A;
+
+    --title-color:#0b0b0f;
+
+    --text-color:#28292E;
+
+    --link-color:#28292E;
+
+    --icon-color:#56575A;
+}
+
+html[data-theme="light"] .brand_logo{
+    filter: invert(1);
+}
 
 body{
     background: var(--primary-bg-color) !important;
     font-family: "Times New Roman", serif;
 }
 
+h1{
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+h1,h2,h3{
+    font-family: 'League Spartan', Courier, monospace;
+    text-transform: uppercase;
+    color: var(--title-color);
+    font-weight: 200;
+}
+
+p{
+    font-size: 1.25rem;
+    text-align: justify;
+    color: var(--text-color);
+}
+
 a{
     text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover{
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 i{
     color: var(--icon-color);
 }
+
+
 
 .header {
     display: flex;
@@ -39,6 +92,11 @@ i{
     width: 100%;
 }
 
+.header_toggle{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .header_brand .brand_logo{
     height: 3.25rem;
     width: 3.25rem;   
@@ -47,6 +105,8 @@ i{
 #toggle_theme{
     font-size: 1.5rem;
     color: var(--primary-color);
+    cursor: pointer;
+    transition: ease-in-out .4s;
 }
 
 .menu{
@@ -55,15 +115,15 @@ i{
     background: var(--primary-bg-color);
 }
 
-.menu_social{
+.menu_mobile{
     justify-content: space-between;
     width: 100vw;
     position: fixed;
     bottom: 0;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--primary-border-color);
 }
 
-.menu_social .menu_link{
+.menu_mobile .menu_link{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,13 +145,224 @@ i{
 }
 
 .menu_link.active .menu_icon,
-.menu_link.active .menu_text{
+.menu_link.active .menu_text
+.menu_link:hover .menu_icon,
+.menu_link:hover .menu_text{
     color: var(--primary-color);
     font-weight: 600;
 }
 
+.menu_social{
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.header_nav{
+    display: none;
+}
+
+.menu_principal{
+    gap: 1rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem 1rem;
+}
+
+footer{
+    margin-bottom: 5rem;
+}
+
+footer p{
+    font-size: .875rem;
+    text-align: center;
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: transparent;
+    border-radius: 3.125rem;
+    transition: ease-in-out .3s;
+    cursor: pointer;
+}
+
+.button:hover{
+    transform: scale(1.1);
+    transition: ease-in-out .3s;
+}
+
+.button span, .button i{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.button_primary span{
+    color: var(--primary-color);
+}
+
+.button_primary{
+    border: 1px solid var(--primary-color);
+
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2.5rem 1rem;
+}
+
+.habilidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6.25rem 1rem 2rem 1rem;
+    gap: 1.25rem;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--secondary-bg-color);
+    margin-top: -5.5rem;
+}
+
+.habilidades h2{
+    font-size: 2rem;
+    text-transform: none;
+}
+
+.arvore_habilidades{
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.habilidade_item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--secundary-border-color);
+    border-radius:  50rem;
+}
+
+.logo_habilidade{
+    height: 2.4rem;
+
+}
+
 @media(min-width: 768px){
-    .menu_social{
+    .nav_mobile{
         display: none;
+    }
+    .header{
+        padding: 1rem 4rem;
+        position: fixed;
+        border-bottom: 1px solid var(--primary-border-color);
+        background: var(--primary-bg-color);
+    }
+    .menu_mobile{
+        display: none;
+    }
+    .header_nav{
+        display: flex;
+    }
+    .header_nav,
+    .header_toggle{
+        min-width: 40%;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    main{
+        padding: 8rem 6rem 4rem 6rem;
+    }
+
+    .main_content1{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 8rem 6rem 4rem 6rem;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .habilidades{
+        padding: 6.25rem 6rem 2rem 6rem;
+        margin-top: -6rem;
+
+    }
+
+    footer{
+        margin: 0;
+    }
+}
+
+@media(min-width: 1200px){
+    main{
+        padding: 12rem 6rem 2rem;
+    }
+    .main_content1 .button{
+        width: auto;
+    }
+
+    .habilidades{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10rem 6rem 4rem;
+    }
+
+    .habilidades h2{
+        font-size: 3.5rem;
+        width: 60%;
+    }
+
+    .arvore_habilidades{
+        gap: 1rem;
+    }
+
+    .habilidade_item{
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .logo_habilidade{
+        height: 3rem;
+    }
+}
+
+@media(min-width: 1400px){
+    h1{
+        font-size: 6.25rem;
+    }
+
+    p{
+        font-size: 1.5rem;
+    }
+    
+    .header{
+        padding: 1rem 15rem;
+    }
+
+    main{
+        padding: 12rem 15rem 2rem;
+    }
+
+    .habilidades{
+        padding: 10rem 15rem 4rem;
     }
 }

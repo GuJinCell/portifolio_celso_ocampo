@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +14,45 @@
 </head>
 <body>
     <header class="header">
+        <nav class="header_nav">
+            <ul class="menu menu_principal">
+                <li class="menu_item">
+                    <a class="menu_link active" href="#home">
+                        <span class="menu_text">Home</span>
+                    </a>
+                </li>
+                <li class="menu_item">
+                    <a class="menu_link" href="#projetos">
+                        
+                        <span class="menu_text">Projetos</span>
+                    </a>
+                </li>
+                <li class="menu_item">
+                    <a class="menu_link" href="#sobre">
+                        
+                        <span class="menu_text">Sobre</span>
+                    </a>
+                </li>
+                <li class="menu_item">
+                    <a class="menu_link" href="#contato">
+                        
+                        <span class="menu_text">Contato</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    
         <div class="header_brand">
-            <img class="brand_logo" src="favicon_io/favicon-32x32.png" alt="iniciais">
-            
+            <img class="brand_logo" src="assets/images/favicon_io/favicon-32x32.png" alt="iniciais">
         </div>
-        <i id="toggle_theme" class="bi bi-arrow-bar-down"></i>
+
+        <div class="header_toggle">
+            <i id="toggle_theme" class="bi bi-arrow-bar-down"></i>
+        </div>
+        
     </header>
-    <nav>
-        <ul class="menu menu_social">
+    <nav class="nav_mobile">
+        <ul class="menu menu_mobile">
             <li class="menu_item">
                 <a class="menu_link active" href="#home">
                     <i class="menu_icon bi bi-house-door-fill"></i>
@@ -48,7 +79,54 @@
             </li>
         </ul>
     </nav>
+    <main>
+        <div class="main_content1">
+            <!-- <h1>Celso Ocampo</h1> -->
+            <h1><b>Portifólio:</b> Minhas competências para Front-end</h1>
+            <p>Celso Ocampo Castro, Rio de Janeiro-RJ, estudante de licenciatura em matemática e programador amador</p>
+            <ul class="menu menu_social">
+                <li>
+                    <a class="menu_link" href=""></a>
+                    <i class="menu_icon bi bi-github"></i>
+                </li>
+                <li>
+                    <a class="menu_link href="href=""></a>
+                    <i class="menu_icon bi bi-linkedin"></i>
+                </li>
+                <li>
+                    <a class="menu_link" href=""></a>
+                    <i class="menu_icon bi bi-mailbox2"></i>
+                </li>
+            </ul>
+            <button class="button button_primary">
+                <span>Ver projetos</span>
+                <i class="bi bi-arrow-down-right"></i>
+            </button>
+        </div>
 
-    <h1>Celso Ocampo</h1>
+    </main>
+    <section class="habilidades">
+        <h2>Principais competências em tecnologias do mercado</h2>
+        <ul class="arvore_habilidades">
+            <li class ="habilidade_item">
+                <img class="logo_habilidade" src="assets/images/habilidades/python2.5.png" alt="python2">
+            </li>
+            <li class ="habilidade_item">
+                <img class="logo_habilidade" src="assets/images/habilidades/html_javascript_programming_icon.png" alt="javaScript">
+            </li>
+            <li class ="habilidade_item">
+                <img class="logo_habilidade" src="assets/images/habilidades/Martz90-Hex-Css-3.32.png" alt="CSS">
+            </li>
+            <li class ="habilidade_item">
+                <img class="logo_habilidade" src="assets/images/habilidades/Html-5.32.png" alt="HTML">
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <p>
+            2024. Todos os Direitos Reservados. Celso Ocampo Castro. Desenvolvido por <a href="https://github.com/GuJinCell">C.O.C.</a>
+        </p>
+    </footer>
+    <script src="assets/js/scripst.js"></script>
 </body>
 </html>
