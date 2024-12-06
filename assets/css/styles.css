@@ -54,6 +54,12 @@ h1{
     font-weight: 200;
 }
 
+h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 h1,h2,h3{
     font-family: 'League Spartan', Courier, monospace;
     text-transform: uppercase;
@@ -80,8 +86,6 @@ a:hover{
 i{
     color: var(--icon-color);
 }
-
-
 
 .header {
     display: flex;
@@ -124,11 +128,9 @@ i{
 }
 
 .menu_mobile .menu_link{
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: .5rem;
+    gap: .5rem 1rem;
 }
 
 .menu_icon{
@@ -145,7 +147,7 @@ i{
 }
 
 .menu_link.active .menu_icon,
-.menu_link.active .menu_text
+.menu_link.active .menu_text,
 .menu_link:hover .menu_icon,
 .menu_link:hover .menu_text{
     color: var(--primary-color);
@@ -165,22 +167,24 @@ i{
     gap: 1rem;
 }
 
+main, .projetos{
+    padding: 2.5rem 1rem;
+}
+
 main{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+.main_content1{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+main, .projetos, .sobre, .contato{
     padding: 2.5rem 1rem;
-}
-
-footer{
-    margin-bottom: 5rem;
-}
-
-footer p{
-    font-size: .875rem;
-    text-align: center;
-    color: var(--text-color);
-    padding: 1rem;
 }
 
 .button{
@@ -192,8 +196,10 @@ footer p{
     padding: 0.875rem 1.5rem;
     background: transparent;
     border-radius: 3.125rem;
+    border: none;
     transition: ease-in-out .3s;
     cursor: pointer;
+    color: var(--primary-color);
 }
 
 .button:hover{
@@ -215,18 +221,11 @@ footer p{
 
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2.5rem 1rem;
-}
-
 .habilidades{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6.25rem 1rem 2rem 1rem;
+    padding: 6.25rem 1rem 2rem;
     gap: 1.25rem;
     justify-content: flex-start;
     align-items: center;
@@ -237,12 +236,13 @@ main{
 .habilidades h2{
     font-size: 2rem;
     text-transform: none;
+    letter-spacing: normal;
+    text-align: start;
 }
 
 .arvore_habilidades{
     display: flex;
     flex-direction: row wrap;
-    justify-content: space-between;
     gap: .5rem;
 }
 
@@ -251,8 +251,7 @@ main{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 5rem;
     aspect-ratio: 1/1;
     border: 1px solid var(--secundary-border-color);
     border-radius:  50rem;
@@ -260,9 +259,82 @@ main{
 
 .logo_habilidade{
     height: 2.4rem;
-
 }
 
+.projetos{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.projetos_cointainer{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.projetos_cards{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card_cover{
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card_body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card_title{
+    font-size: 1.5rem;
+}
+
+.card_desc{
+    color: var(--title-color);
+}
+
+.card_list{
+    margin-left: 1.25rem;
+}
+
+.card_buttons, .desc_buttons{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card_buttons .button{
+    padding: .65rem 1.25rem;
+}
+
+.card_body, .arvore_habilidades{
+    gap: .75rem;
+}
+
+.card_body, .logo_habilidade{
+    height: 2rem;
+}
+
+footer{
+    margin-bottom: 5rem;
+}
+
+footer p{
+    font-size: .875rem;
+    text-align: center;
+    color: var(--text-color);
+    padding: 1rem;
+}
 @media(min-width: 768px){
     .nav_mobile{
         display: none;
@@ -288,7 +360,12 @@ main{
         font-size: 4rem;
     }
 
-    main{
+    h2{
+        font-size: 3rem ;
+        letter-spacing: 0.4rem;
+    }
+
+    main, .projetos{
         padding: 8rem 6rem 4rem 6rem;
     }
 
@@ -307,8 +384,27 @@ main{
 
     }
 
+    .projetos_cards{
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
     footer{
         margin: 0;
+    }
+}
+
+@media(min-width: 992px){
+    .projetos_cards{
+        flex-direction: row;
+    }
+    .projetos_cards.card_reverse{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .card_cover{
+        width: 55%;
     }
 }
 
@@ -324,6 +420,10 @@ main{
         flex-direction: row;
         justify-content: space-between;
         padding: 10rem 6rem 4rem;
+    }
+
+    h2{
+        font-size: 4rem ;
     }
 
     .habilidades h2{
@@ -343,11 +443,34 @@ main{
     .logo_habilidade{
         height: 3rem;
     }
+    .projetos_cards{
+        flex-direction: row;
+    }
+
+    .card_cover{
+        width: 50%;
+    }
+
+    .card_title{
+        font-size: 3.25rem;
+    }
+
+    .card_desc, .item_card{
+        font-size: 1.25rem;
+    }
+
+    .card_buttons .button{
+        width: auto;
+    }
 }
 
 @media(min-width: 1400px){
     h1{
         font-size: 6.25rem;
+    }
+
+    h2{
+        font-size: 5rem ;
     }
 
     p{
