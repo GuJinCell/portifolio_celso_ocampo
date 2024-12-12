@@ -9,7 +9,7 @@
 
     --primary-border-color:#28292E;
 
-    --secundary-border-color:#56575A;
+    --secondary-border-color:#56575A;
 
     --title-color:#f0f0f0;
 
@@ -29,7 +29,7 @@
 
     --primary-border-color:#C7C8C9;
 
-    --secundary-border-color:#56575A;
+    --secondary-border-color:#56575A;
 
     --title-color:#0b0b0f;
 
@@ -56,8 +56,20 @@ h1{
 
 h2{
     font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
+    text-align: left;
+    letter-spacing: 0.4rem;
+}
+
+h3{
+    font-size: 1.55rem;
+    text-align: left;
+}
+
+h4{
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 1.15rem;
+    text-align: left;
 }
 
 h1,h2,h3{
@@ -67,8 +79,11 @@ h1,h2,h3{
     font-weight: 200;
 }
 
+p, span, li{
+    font-size: 1rem;
+}
+
 p{
-    font-size: 1.25rem;
     text-align: justify;
     color: var(--text-color);
 }
@@ -94,6 +109,7 @@ i{
     align-items: center;
     padding: 0.5rem 1rem;
     width: 100%;
+    z-index: 2;
 }
 
 .header_toggle{
@@ -253,7 +269,7 @@ main, .projetos, .sobre, .contato{
     align-items: center;
     width: 5rem;
     aspect-ratio: 1/1;
-    border: 1px solid var(--secundary-border-color);
+    border: 1px solid var(--secondary-border-color);
     border-radius:  50rem;
 }
 
@@ -267,7 +283,7 @@ main, .projetos, .sobre, .contato{
     gap: 2rem;
 }
 
-.projetos_cointainer{
+.projetos_container{
     display: flex;
     flex-direction: column;
     gap: 4rem;
