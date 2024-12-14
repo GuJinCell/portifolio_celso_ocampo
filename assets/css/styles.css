@@ -203,6 +203,12 @@ main, .projetos, .sobre, .contato{
     padding: 2.5rem 1rem;
 }
 
+.bloco_topo{
+    border-bottom: 1px solid var(--secondary-border-color);
+    border-top: 1px solid var(--secondary-border-color);
+    
+}
+
 .button{
     display: flex;
     justify-content: center;
@@ -292,7 +298,7 @@ main, .projetos, .sobre, .contato{
 .projetos_cards{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .card_cover{
@@ -301,6 +307,7 @@ main, .projetos, .sobre, .contato{
     border-radius: 0.5rem;
     object-fit: cover;
     object-position: center;
+    margin-bottom: 1rem;
 }
 
 .card_body{
@@ -309,6 +316,10 @@ main, .projetos, .sobre, .contato{
     justify-content: flex-end;
     align-items: flex-start;
     gap: 1rem;
+}
+
+.card_body, .card_cover{
+    position: relative;
 }
 
 .card_title{
@@ -341,6 +352,129 @@ main, .projetos, .sobre, .contato{
     height: 2rem;
 }
 
+.sobre{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sobre_content1, .sobre_content2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.sobre_foto{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid var(--primary-border-color);
+    border-radius: 50rem;
+}
+
+.sobre_desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.sobre_icons{
+    display: flex;
+    align-items: center;
+    gap: .85rem;
+}
+
+.sobre_icons i{
+    font-size: 1.25rem;
+}
+
+.sobre_content2 .col1,
+.sobre_content2 .col2{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 2rem;
+}
+
+.sobre_content2 .row1,
+.sobre_content2 .row2{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.accordion_header{
+    width: 100%;
+    display: flex;
+    padding: .75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--primary-border-color);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+
+.accordion_header span{
+    color: var(--title-color);
+}
+
+.accordion_header.start{
+    border-radius: .25rem .25rem 0rem 0rem;
+}
+
+.accordion_header.end,
+.accordion_item.active .accordion_body.end{
+    border-radius: 0rem 0rem .25rem .25rem;
+}
+
+.accordion_item.active .accordion_header.end{
+    border-radius: 0;
+}
+
+.accordion_body{
+    display: none;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .625rem;
+    border: 1px solid var(--primary-border-color);
+}
+
+.accordion_item.active .accordion_body{
+    display: flex;
+}
+
+.accordion_item.active .bi-caret-down-fill{
+    transform: rotate(180deg);
+}
+
+.contato{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--primary-border-color);
+}
+
+.contato p{
+    text-align: center;
+}
+
+.contato .button{
+    width: auto;
+}
+
+.contato .email{
+    text-transform: lowercase;
+}
+
 footer{
     margin-bottom: 5rem;
 }
@@ -351,6 +485,7 @@ footer p{
     color: var(--text-color);
     padding: 1rem;
 }
+
 @media(min-width: 768px){
     .nav_mobile{
         display: none;
@@ -401,9 +536,13 @@ footer p{
     }
 
     .projetos_cards{
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         gap: 2rem;
+    }
+
+    .card_cover, .card_body{
+        width: 100%;
     }
 
     footer{
@@ -414,6 +553,7 @@ footer p{
 @media(min-width: 992px){
     .projetos_cards{
         flex-direction: row;
+        padding: 2rem;
     }
     .projetos_cards.card_reverse{
         flex-direction: row-reverse;
@@ -421,6 +561,10 @@ footer p{
     }
     .card_cover{
         width: 55%;
+    }
+
+    .card_body{
+        width: 45%;
     }
 }
 
